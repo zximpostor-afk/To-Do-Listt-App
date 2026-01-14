@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App Interaktif</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <h1>To-Do App</h1>
+            
+            <div class="stats-container">
+                <div>
+                    <strong>Keep it Up!</strong>
+                    <p style="font-size: 0.7rem; opacity: 0.7;">Semangat Kawan</p>
+                </div>
+                <div class="progress-bar">0 / 0</div>
+            </div>
+
+            <form class="input-area" id="todo-form">
+                <input type="text" id="task-input" placeholder="Tambah tugas..." 
+                       required 
+                       oninvalid="this.setCustomValidity('Wajib diisi ya kawan!')" 
+                       oninput="this.setCustomValidity('')">
+                <button type="submit" id="add-task-btn">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </form>
+
+            <ul id="task-list"></ul>
+            
+            <img src="orang.png" alt="ilustrasi" class="ilustrasi-orang">
+        </div>  
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
