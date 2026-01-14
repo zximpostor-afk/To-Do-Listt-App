@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const emptyImage = document.querySelector('.ilustrasi-orang');
     const progressText = document.querySelector('.progress-bar');
 
-    // Fungsi Statistik & Efek Petasan
     const updateStats = () => {
         const total = taskList.children.length;
         const completed = taskList.querySelectorAll('.completed').length;
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
         progressText.textContent = `${completed} / ${total}`;
         emptyImage.style.display = total === 0 ? 'block' : 'none';
 
-        // Munculkan petasan jika semua selesai
         if (total > 0 && total === completed) {
             confetti({
                 particleCount: 150,
@@ -44,14 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
 
-        // Logika Selesai
         const checkbox = li.querySelector('.checkbox');
         checkbox.addEventListener('change', () => {
             li.classList.toggle('completed', checkbox.checked);
             updateStats();
         });
 
-        // Logika Edit
         const editBtn = li.querySelector('.edit-btn');
         const span = li.querySelector('.task-text');
         editBtn.addEventListener('click', () => {
@@ -69,7 +65,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Logika Hapus
         li.querySelector('.delete-btn').addEventListener('click', () => {
             li.style.transform = "scale(0.8)";
             li.style.opacity = "0";
